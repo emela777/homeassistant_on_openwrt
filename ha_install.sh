@@ -4,7 +4,7 @@
 set -e
 
 OPENWRT_VERSION=${OPENWRT_VERSION:-21.02}
-HOMEASSISTANT_MAJOR_VERSION="2022.8"
+HOMEASSISTANT_MAJOR_VERSION="2022.10"
 export PIP_DEFAULT_TIMEOUT=100
 
 get_ha_version()
@@ -498,7 +498,7 @@ sed -i 's/        "/        # "/' homeassistant/generated/config_flows.py
 sed -i 's/    # "mqtt"/    "mqtt"/' homeassistant/generated/config_flows.py
 sed -i 's/    # "esphome"/    "esphome"/' homeassistant/generated/config_flows.py
 sed -i 's/    # "met"/    "met"/' homeassistant/generated/config_flows.py
-sed -i 's/    # "radio_browser"/    "radio_browser"/' homeassistant/generated/config_flows.py
+
 if [ $LUMI_GATEWAY ]; then
   sed -i 's/    # "zha"/    "zha"/' homeassistant/generated/config_flows.py
 fi
